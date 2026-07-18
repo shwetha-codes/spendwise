@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "dashboard/show"
   resource :session
   resources :passwords, param: :token
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -14,7 +15,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  root "sessions#new"
+  root "dashboard#show"
   get "/signup", to: "registrations#new", as: :signup
   post "/signup", to: "registrations#create"
 end
