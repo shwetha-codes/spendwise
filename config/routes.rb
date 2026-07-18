@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   root "sessions#new"
+  get "/signup", to: "registrations#new", as: :signup
+  post "/signup", to: "registrations#create"
 end
