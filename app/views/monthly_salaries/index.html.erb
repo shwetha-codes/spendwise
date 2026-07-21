@@ -1,0 +1,17 @@
+<h1>Monthly Salaries</h1>
+
+<%= link_to "Add monthly salary", new_monthly_salary_path %>
+
+<% if @monthly_salaries.any? %>
+  <ul>
+    <% @monthly_salaries.each do |monthly_salary| %>
+      <li>
+        <%= monthly_salary.month.strftime("%B %Y") %>
+        —
+        <%= number_to_currency(monthly_salary.amount) %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No salary records added yet.</p>
+<% end %>

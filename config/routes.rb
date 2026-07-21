@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   root "dashboard#show"
   get "/signup", to: "registrations#new", as: :signup
   post "/signup", to: "registrations#create"
+  resources :monthly_salaries
 end
