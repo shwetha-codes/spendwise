@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   get "/signup", to: "registrations#new", as: :signup
   post "/signup", to: "registrations#create"
   resources :monthly_salaries
+  resources :categories
 end
