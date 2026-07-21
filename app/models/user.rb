@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_secure_password
   has_many :sessions, dependent: :destroy
   has_many :monthly_salaries, dependent: :destroy
+  has_many :categories, dependent: :destroy
 
   validates :email_address,
             presence: true,
