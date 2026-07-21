@@ -32,6 +32,14 @@ class MonthlySalariesController < ApplicationController
     end
   end
 
+  def destroy
+    monthly_salary = Current.user.monthly_salaries.find(params[:id])
+    monthly_salary.destroy
+
+    redirect_to monthly_salaries_path,
+                notice: "Monthly salary was deleted successfully."
+  end
+
 
   private
 

@@ -11,6 +11,11 @@
         <%= number_to_currency(monthly_salary.amount) %>
         —
         <%= link_to "Edit", edit_monthly_salary_path(monthly_salary) %>
+        —
+        <%= button_to "Delete",
+              monthly_salary_path(monthly_salary),
+              method: :delete,
+              data: { turbo_confirm: "Are you sure?" } %>
       </li>
     <% end %>
   </ul>
