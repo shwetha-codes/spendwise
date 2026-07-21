@@ -17,6 +17,22 @@ class MonthlySalariesController < ApplicationController
     end
   end
 
+  def edit
+    @monthly_salary = Current.user.monthly_salaries.find(params[:id])
+  end
+
+  def update
+    @monthly_salary = Current.user.monthly_salaries.find(params[:id])
+
+    if @monthly_salary.update(monthly_salary_params)
+      redirect_to monthly_salaries_path,
+                  notice: "Monthly salary was updated successfully."
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+
   private
 
   def monthly_salary_params
